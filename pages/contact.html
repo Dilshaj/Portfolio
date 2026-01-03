@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Get in Touch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
+</head>
+
+<body>
+    <div id="header-container"></div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+
+            <h1 class="hero-title">Contact Us</h1>
+            <p class="hero-subtitle">
+                Get in touch with us. We'd love to hear from you and discuss how we can help transform your business.
+            </p>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="collaboration-section">
+        <!-- Floating Decorative Element -->
+        <div class="floating-cube">
+            <img src="../assets/images/contact-cube-bg.png" alt="Cube Decoration">
+        </div>
+
+        <div class="container">
+            <div class="collab-header text-center">
+                <span class="badge-collab">Collaboration</span>
+                <h2 class="collab-title">Let's talk on Collaboration</h2>
+            </div>
+
+            <!-- Updated ID to avoid duplicates, added name attributes -->
+            <form action="../backend/contact.php" method="POST" class="collab-form" id="collabForm">
+                <input type="hidden" name="form_type" value="Collaboration Form">
+                <div class="form-row inputs-row">
+                    <input type="text" name="name" placeholder="Enter Name" class="collab-input" required>
+                    <input type="email" name="email" placeholder="Email" class="collab-input" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" class="collab-input">
+                </div>
+                <div class="form-row">
+                    <textarea name="message" placeholder="Enter message" class="collab-textarea" rows="2"
+                        required></textarea>
+                </div>
+                <div class="form-row text-center">
+                    <button type="submit" class="btn-send-now">Send Now</button>
+                </div>
+                <div class="form-status"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Project Discussion Section -->
+    <section class="project-idea-section">
+        <div class="container">
+            <div class="idea-card">
+                <div class="idea-flex">
+                    <!-- Left: Lightbulb Graphic -->
+                    <div class="idea-visual">
+                        <img src="../assets/images/project-idea-lightbulb.png" alt="Creative Project Idea">
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="idea-content">
+                        <h2 class="idea-title">
+                            Have an Awsome Project Idea? <span class="text-highlight">Let's Discuss</span>
+                        </h2>
+                        <p class="idea-desc">
+                            Turn your idea into a scalable, impactful digital solution with Dilshaj Infotech. Our team
+                            is ready to collaborate, innovate, and bring your vision to life.
+                        </p>
+
+                        <div class="idea-stats">
+                            <div class="stat-item">
+                                <span class="stat-num">100%</span>
+                                <span class="stat-label">Client Satisfaction</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">120+</span>
+                                <span class="stat-label">Expert Team</span>
+                            </div>
+                        </div>
+
+                        <div class="idea-contact-box">
+                            <!-- Updated ID to projectForm, removed Formspree action -->
+                            <form action="../backend/contact.php" method="POST" class="contact-form" id="projectForm">
+                                <input type="hidden" name="form_type" value="Project Idea Form">
+                                <!-- Honeypot for spam protection -->
+                                <input type="text" name="_gotcha" style="display:none">
+
+                                <div class="form-group">
+                                    <div class="input-icon"><i class="fas fa-user"></i></div>
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-icon"><i class="fas fa-envelope"></i></div>
+                                    <input type="email" name="email" placeholder="Your Email Address" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-icon"><i class="fas fa-tag"></i></div>
+                                    <input type="text" name="subject" placeholder="Subject (Optional)">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-icon textarea-icon"><i class="fas fa-comment-alt"></i></div>
+                                    <textarea name="message" placeholder="Your Message" required rows="4"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn-idea-send full-width-btn">Send Message <i
+                                        class="fas fa-paper-plane"></i></button>
+
+                                <div class="form-status"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

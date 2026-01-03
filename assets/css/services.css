@@ -1,0 +1,1395 @@
+﻿:root {
+    --bg-color: #050a18;
+    --text-color: #ffffff;
+    --primary-blue: #3b82f6;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-main: 'Outfit', sans-serif;
+}
+
+/* Footer background match for seamless transition from Join section */
+.footer {
+    --footer-outer-bg: #e0e7ff;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+}
+
+/* Header styles handled globally by home/style.css */
+
+/* Hero overrides removed to inherit reduced home.css sizing */
+
+.text-gradient {
+    background: linear-gradient(90deg, #2563EB 0%, #7C3AED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    /* Fallback */
+}
+
+
+
+/* Sidebar styles removed - inherited from home/style.css */
+
+/* Main Wrapper */
+.main-wrapper {
+    margin: 0;
+    /* padding-top moved to hero-section to allow background to flow behind header and fix transparency issue */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .main-wrapper {
+        padding: 0 1.5rem;
+        /* Reduce padding on mobile to prevent content cutoff */
+    }
+
+    .hero-section .row {
+        padding-top: 100px !important;
+        /* Push hero content down on mobile */
+        padding-bottom: 40px !important;
+    }
+}
+
+/* ===== NEW HERO SECTION STYLES ===== */
+/* Obsolete hero styles removed to use global home/style.css */
+
+/* Glass Header */
+
+
+/* Services Section */
+/* Services Section */
+.services-section {
+    background-color: #f8faff;
+    background-image: url('assets/bg-service.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ... (skip other styles) ... */
+
+/* Tech Stack Section */
+.tech-stack-section {
+    background-color: #ffffff;
+    background-image: url('assets/our_stack.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /* Force full width */
+    margin-left: -4rem;
+    /* Standard breakout */
+    margin-right: -4rem;
+    padding-left: 4rem;
+    /* Adjust internal padding */
+    padding-right: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+/* ... (skip other styles) ... */
+
+.join-section {
+    background-color: #e0e7ff;
+    /* Force full width */
+    margin-left: -4rem;
+    /* Standard breakout */
+    margin-right: -4rem;
+    padding: 6rem 4rem;
+    padding-left: 4rem;
+    /* Adjust padding */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fluid Blob Decoration */
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: -50px;
+    width: 400px;
+    height: 400px;
+    background: url('assets/bg_service.png') no-repeat center center/contain;
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(45deg);
+}
+
+.services-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: url('assets/bg_service.png') no-repeat center center/contain;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(-135deg);
+}
+
+
+/* ===== PREMIUM GLASSMORPHISM SERVICE CARDS ===== */
+
+/* Card Wrapper */
+.premium-card-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 3rem;
+    height: auto;
+}
+
+/* Premium Glass Card */
+.premium-glass-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 32px;
+    padding: 1.5rem 1.5rem;
+    /* Reduced from 2rem */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    overflow: visible;
+
+    /* -webkit-mask: radial-gradient(circle at calc(100% - 40px) calc(100% - 40px), transparent 45px, black 46px); */
+    /* mask: radial-gradient(circle at calc(100% - 40px) calc(100% - 40px), transparent 45px, black 46px); */
+}
+
+.premium-glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent 50%, rgba(148, 163, 184, 0.2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.premium-glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Card Header Text */
+.card-header-text {
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+}
+
+.card-header-text h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    font-family: 'Inter', 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* Card Image Area */
+.card-image-area {
+    width: 100%;
+    height: 220px;
+    /* Reduced from 280px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.card-image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+    transition: transform 0.4s ease;
+}
+
+.premium-glass-card:hover .card-image-area img {
+    transform: scale(1.05);
+}
+
+/* Premium Arrow Button */
+.premium-arrow-btn {
+    display: none !important;
+    /* Hidden as requested */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 10;
+    padding: 0;
+}
+
+.premium-arrow-btn svg {
+    stroke: #1a1a1a;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.premium-arrow-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 1);
+}
+
+.premium-arrow-btn:hover svg {
+    transform: rotate(45deg);
+}
+
+.premium-arrow-btn:active {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .premium-card-wrapper {
+        max-width: 100%;
+    }
+
+    .card-image-area {
+        height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .premium-glass-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .card-header-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-image-area {
+        height: 200px;
+    }
+
+    .premium-arrow-btn {
+        width: 50px;
+        height: 50px;
+        bottom: -15px;
+        right: -15px;
+    }
+
+    .premium-arrow-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Hide Old Service Card Styles */
+.service-card-container,
+.service-glass-card,
+.service-card-header,
+.service-stack-wrapper,
+.service-stack-layer,
+.service-main-content,
+.service-action-btn {
+    display: none;
+}
+
+/* Tech Stack Section - Duplicate removed, using first definition with correct background */
+
+
+/* Connect Marquee to Top */
+.tech-stack-section .marquee-ribbon-container {
+    margin-top: 0;
+    width: 100vw;
+    margin-left: -50vw;
+}
+
+/* =========================================
+   Bootstrap Replacement Utilities
+   ========================================= */
+
+/* Layout & Positioning */
+.position-relative {
+    position: relative !important;
+}
+
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.z-2 {
+    z-index: 2 !important;
+}
+
+/* Spacing */
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+.pb-5 {
+    padding-bottom: 3rem !important;
+}
+
+.gap-4 {
+    gap: 1.5rem !important;
+}
+
+/* Typography */
+.text-secondary {
+    color: #6c757d !important;
+}
+
+.text-dark {
+    color: #212529 !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.display-5 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1320px;
+    /* Standard Bootstrap XL container equivalent */
+}
+
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+
+/* ... scrolling banner ... */
+
+/* Fluid Decorations - HIDDEN (Replaced by BG Image) */
+.fluid-deco-left,
+.fluid-deco-right {
+    display: none;
+}
+
+/* Scrolling Banner - White Strip on Blue Background Context */
+/* Scrolling Banner - White Strip on Blue Background Context */
+.scrolling-banner-container {
+    background-color: var(--primary-blue);
+    margin-left: -4rem;
+    margin-right: -4rem;
+    padding: 3rem 0;
+    /* Increased Height as requested */
+    /* Increased slightly to handle rotation vertically */
+    /* Straight Container */
+    transform: none;
+    margin-top: -6rem;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    /* Center the rotated strip */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scrolling-banner {
+    background: white;
+    padding: 0.5rem 0;
+    /* thinner white strip */
+    /* Gentler Diagonal Animation */
+    width: 120%;
+    margin-left: -10%;
+    transform: rotate(-1deg);
+    /* flatter angle to fit inside */
+    /* Reduced slope to keep it better aligned */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.scrolling-content {
+    display: inline-block;
+    animation: scroll 30s linear infinite;
+    font-size: 1.5rem;
+    color: #000;
+    white-space: nowrap;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.line-acc {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #ec4899;
+    /* Pink accent */
+    margin-bottom: 0.5rem;
+    border-radius: 2px;
+}
+
+/* Tech Tabs */
+.tech-tab {
+    font-size: 1rem;
+    color: #64748b;
+    cursor: pointer;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.tech-tab:hover {
+    color: #334155;
+}
+
+.tech-tab.active {
+    color: #d946ef;
+    /* Pink active color */
+}
+
+.tech-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #d946ef;
+    border-radius: 2px;
+}
+
+.tech-stack-img {
+    max-height: 200px;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.05));
+    /* Blend the white background of the image with the section background */
+    mix-blend-mode: multiply;
+    margin-bottom: 2rem;
+}
+
+/* Tech Grid of Individual Logos */
+.tech-grid-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Tech Row - Base Styles */
+.tech-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+/* 5-Icon Row */
+.tech-row-5 {
+    max-width: 100%;
+}
+
+/* 4-Icon Row - Stepped/Indented */
+.tech-row-4 {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tech-item {
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-item:hover {
+    transform: scale(1.1);
+}
+
+.tech-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(10%) contrast(1.1);
+    transition: filter 0.3s;
+}
+
+/* Specific sizing adjustments for visual balance */
+.tech-logo.node {
+    height: 45px;
+}
+
+/* Simple icon might be text heavy */
+.tech-logo.php {
+    height: 40px;
+}
+
+.tech-logo.mysql {
+    height: 50px;
+}
+
+.tech-logo.java {
+    height: 55px;
+}
+
+.tech-logo.net {
+    height: 45px;
+}
+
+.tech-logo.python {
+    height: 45px;
+}
+
+.tech-logo.rails {
+    height: 45px;
+}
+
+.tech-logo.go {
+    height: 50px;
+}
+
+.tech-logo.mongo {
+    height: 50px;
+}
+
+.tech-logo:hover {
+    filter: grayscale(0%) contrast(1.2);
+}
+
+/* Fluid Decorations */
+.fluid-deco-left {
+    position: absolute;
+    top: 40%;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    background: url('../../assets/service/fluid-bg.png') no-repeat center center/contain;
+    opacity: 0.8;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(0deg);
+}
+
+.fluid-deco-right {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 400px;
+    height: 400px;
+    background: url('../../assets/service/fluid-bg.png') no-repeat center center/contain;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(180deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+
+
+    .services-section,
+    .tech-stack-section {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+
+    .scrolling-banner-container {
+        margin-left: -2rem;
+        margin-right: -2rem;
+    }
+}
+
+/* Hero Image Blending */
+/* Hero Image Styling */
+.hero-main-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Removed blend mode and masks to show original image (and circles) clearly */
+}
+
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-circles-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1/1;
+    background: repeating-radial-gradient(circle,
+            transparent 0px,
+            transparent 28px,
+            #2563eb 28px,
+            #2563eb 30px);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    /* Ensure it doesn't overflow weirdly, but usually fine in hero */
+}
+
+/* 
+   JOIN SECTION (Custom Design) 
+*/
+.join-section {
+    background-color: #e0e7ff;
+    /* Slightly Darker (Indigo-100) */
+    /* Light Lavender/Blue Background */
+    margin-left: -4rem;
+    margin-right: -4rem;
+    padding: 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.join-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+/* Typography Left */
+.join-heading {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+    /* Reduced from 5rem */
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.text-blue {
+    color: #2563eb;
+    /* Strong Blue */
+    text-shadow: 2px 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.text-gradient-purple {
+    background: linear-gradient(to right, #2563eb, #d946ef);
+    /* Blue to Pink as requested */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 4px rgba(219, 39, 119, 0.2));
+}
+
+/* Right Content */
+.join-visual-content {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Align right as per visual flow */
+    text-align: right;
+}
+
+.dr-logo-wrapper {
+    margin-bottom: 2rem;
+}
+
+.dr-logo {
+    max-width: 200px;
+    /* Large logo */
+    height: auto;
+    /* Soft shadow for depth */
+    filter: drop-shadow(0 10px 20px rgba(59, 130, 246, 0.15));
+}
+
+.join-desc {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .join-section {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding: 4rem 2rem;
+    }
+
+    .join-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .join-visual-content,
+    .join-text-content {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .join-heading {
+        font-size: 3.5rem;
+    }
+}
+
+/* Mobile Responsiveness (768px) */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-wrapper {
+        padding: 0 20px;
+    }
+
+    .glass-header {
+        display: none;
+        /* Hide top bar on mobile if redundant with navbar */
+    }
+
+    /* Reset Breakouts */
+    .services-section,
+    .tech-stack-section,
+    .join-section {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: calc(100% + 40px);
+    }
+
+    .services-section {
+        padding-top: 40px !important;
+    }
+
+    /* Stack Cards */
+    .service-card-container {
+        height: auto;
+        margin-bottom: 40px;
+    }
+
+    .service-glass-card {
+        height: auto;
+        min-height: 400px;
+        padding: 30px;
+    }
+
+    .join-heading {
+        font-size: 2.5rem;
+    }
+
+    .join-desc {
+        font-size: 1rem;
+    }
+
+    .tech-stack-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .scrolling-banner-container {
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+    }
+
+    .scrolling-banner {
+        width: 150%;
+        margin-left: -25%;
+    }
+}
+
+/* Tech Tooltip */
+.tech-tooltip {
+    position: fixed;
+    background: rgba(15, 23, 42, 0.95);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease,
+        transform 0.1s ease;
+    z-index: 1000;
+    transform: translate(-50%, -120%);
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.tech-item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.5);
+    /* subtle hover bg */
+}
+
+.tech-tab {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+.tech-tab:hover {
+    color: var(--primary-blue);
+}
+
+.tech-tab.active {
+    color: #c026d3;
+    /* Pink/Purple active color as per image */
+    border-bottom-color: #c026d3;
+}
+
+/* Stats Section Styling */
+.badge-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    background: transparent;
+    transition: all 0.3s;
+}
+
+.badge-pill:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.stat-dot {
+    width: 4px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.stat-line {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 0 0.5rem;
+}
+
+.circles-group {
+    display: flex;
+    align-items: center;
+}
+
+.circle-ring {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin-left: -12px;
+}
+
+.circle-ring:first-child {
+    margin-left: 0;
+}
+
+/* Custom separator for stats to match light theme */
+.border-secondary-subtle {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.stats-grid {
+    margin-top: 2rem;
+}
+
+/* Hero Composition Styles */
+.hero-composition {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    margin-top: 50px;
+    /* Add space at top to push image down */
+}
+
+.hero-layer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    transition: all 0.5s ease;
+}
+
+.layer-doodles {
+    z-index: 0;
+    /* Behind everything */
+    width: 90%;
+    /* Smaller size */
+    top: 40%;
+    /* Moved Up */
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    /* Fully visible */
+}
+
+.layer-bg {
+    z-index: 1;
+    width: 90%;
+    /* Same width as girl for alignment */
+    bottom: 0;
+    left: 50%;
+    /* Centered */
+    transform: translateX(-50%);
+}
+
+.layer-girl {
+    z-index: 3;
+    width: 90%;
+    /* Match semicircle width */
+    bottom: 0;
+    left: 50%;
+    /* Centered on semicircle */
+    transform: translateX(-50%);
+}
+
+
+
+/* Responsive adjustments */
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero-composition {
+        height: 500px;
+        margin-top: 40px;
+    }
+
+    .layer-girl {
+        width: 75%;
+        /* Increased from 55% */
+        left: 50%;
+        /* Reset to center */
+    }
+
+    .layer-bg {
+        width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-composition {
+        height: 400px;
+        /* Keep all layers together on mobile */
+    }
+
+    .layer-doodles {
+        width: 100%;
+        top: 50%;
+        /* Keep with other layers */
+    }
+
+    .layer-girl {
+        width: 90%;
+        /* Much bigger on mobile */
+        left: 50%;
+        /* Reset to center */
+    }
+
+    .layer-bg {
+        width: 95%;
+        /* Keep same size as girl */
+    }
+}
+
+/* 
+/* Service Card duplicate styles removed to inherit from home.css */
+
+/* Immersive Container - Matching Home Page Width */
+/* Grid style overrides removed */
+
+/* Responsive Fixes for Services Page */
+@media (max-width: 992px) {
+
+    .services-section,
+    .tech-stack-section,
+    .join-section {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+    }
+
+    .scrolling-banner-container {
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+    }
+
+    .premium-card-wrapper {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    #services-hero .hero-image {
+        transform: none !important;
+        /* Reset custom scaling */
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+    #services-hero .robot-img {
+        max-width: 80%;
+    }
+
+    #services-hero .hero-content h1 {
+        white-space: normal;
+        /* Allow wrapping */
+        font-size: 3rem;
+    }
+}
+
+/* FIX: Remove Nav Blue/Background completely as requested (Global override for Services Page) */
+
+
+/* FIX: Mobile View Layout Adjustments (Specific to Mobile) */
+@media (max-width: 768px) {
+
+    /* Remove wrapper padding to prevent "Navy Blue Border" (body background) from showing */
+    .main-wrapper {
+        padding: 0 !important;
+    }
+
+    .services-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 20px;
+        padding-right: 0 !important;
+        width: 100%;
+    }
+
+    .services-header h2 {
+        font-size: 2rem;
+        text-align: left !important;
+        width: 100%;
+    }
+
+    .services-header p {
+        max-width: 100% !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Ensure container padding is comfortable but not excessive */
+    .immersive-container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+    }
+
+    /* FIX: Allow Service Cards to shrink and center on Mobile */
+    /* Mobile card override removed */
+}
+
+/* ==========================================================================================
+   REFINED MOBILE OVERRIDES (Site-Wide Consistency)
+   ========================================================================================== */
+@media (max-width: 767px) {
+
+    /* --- TYPOGRAPHY & ALIGNMENT --- */
+    #services-hero .hero-content h1,
+    .services-header h2,
+    .tech-stack-title,
+    .join-content h2,
+    .footer-top h2 {
+        font-size: 26px !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    #services-hero .hero-content p,
+    .services-header p,
+    .tech-stack-desc,
+    .join-content p,
+    .footer-section p,
+    .brand-col p {
+        font-size: 14px !important;
+        text-align: left !important;
+        line-height: 1.5 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* --- FOOTER CONSISTENCY --- */
+
+
+    /* --- SPECIFIC SECTION FIXES --- */
+    #services-hero .hero-content,
+    .services-header,
+    .tech-stack-header,
+    .join-content {
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+
+    .immersive-container,
+    .join-section {
+        padding: 0 20px !important;
+    }
+
+    .footer-middle {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #services-hero .hero-content h1,
+    .services-header h2,
+    .tech-stack-title,
+    .join-content h2,
+    .footer-top h2 {
+        font-size: 24px !important;
+    }
+
+    #services-hero .hero-content p,
+    .services-header p,
+    .tech-stack-desc,
+    .join-content p,
+    .footer-section p,
+    .brand-col p {
+        font-size: 13px !important;
+    }
+
+    .footer-bottom {
+        gap: 3px !important;
+        padding-top: 15px !important;
+    }
+
+    .footer-bottom p,
+    .footer-legal a {
+        font-size: 8px !important;
+    }
+
+    .footer-legal {
+        gap: 3px !important;
+    }
+
+    .btn-footer-cta {
+        padding: 5px 10px !important;
+        font-size: 10px !important;
+    }
+}
+
+/* Custom Resize removed */
+
+/* Custom Resize for Tech Stack Items */
+.tech-logo {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain;
+}
+
+
+.tech-item {
+    padding: 5px !important;
+}
+
+
+/* Custom Resize for Tech Stack Section */
+.tech-stack-section {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.tech-stack-section .section-title {
+    margin-bottom: 1rem !important;
+    /* Reduce mb-4 */
+}
+
+.tech-stack-section .tech-tabs {
+    margin-bottom: 1.5rem !important;
+    /* Reduce mb-5 */
+}
+
+/* Force Navbar Consistency */
+
+
+/* Explicit fix for card header alignment */
+/* Header area overrides removed */
+
+
+/* ALIGNMENT FIX: Floating AI Icon */
+/* Ensure it's positioned relative to the robot wrapper */
+#services-hero .robot-wrapper {
+    position: relative;
+    display: inline-block;
+    /* Ensure wrapper fits content */
+}
+
+/* Removed floating icon as per user request */
+
+/* Service Card overrides removed */
+
+/* Services Hero Specific Alignment */
+#services-hero .hero-image {
+    justify-content: flex-end !important;
+    padding-right: 0 !important;
+}
+
+#services-hero .robot-wrapper {
+    justify-content: flex-end !important;
+    text-align: right !important;
+    margin-right: -80px !important;
+    /* Pull towards edge */
+    width: auto !important;
+    display: inline-block !important;
+    /* Ensure it doesn't span full width if not flex */
+}
+
+#services-hero .robot-img {
+    margin-right: 0 !important;
+    object-position: right center !important;
+}
+
+@media (max-width: 992px) {
+    #services-hero .hero-image {
+        justify-content: center !important;
+    }
+
+    #services-hero .robot-wrapper {
+        margin-right: 0 !important;
+    }
+}

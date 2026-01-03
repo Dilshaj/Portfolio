@@ -1,0 +1,1005 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+/* Hero Section with Light Background */
+.hero-section {
+    background: #fdf4ff;
+    /* Light Pink/Lavender matching reference */
+    padding: 120px 0 0;
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Removed old header styles - using shared header from home/style.css */
+
+
+/* Hero Content */
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    max-width: 1600px;
+    /* Wider container for larger image */
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.hero-left {
+    padding-right: 20px;
+}
+
+.hero-title {
+    font-size: 72px;
+    /* Making it larger as in reference */
+    font-weight: 850;
+    /* Extra bold */
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.explore-btn {
+    background: #2563EB;
+    color: #fff;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+}
+
+.explore-btn:hover {
+    background: #1D4ED8;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4);
+}
+
+/* Hero Right - Person Image */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.hero-person {
+    width: 100%;
+    max-width: 750px;
+    /* Significantly larger as in reference */
+    height: auto;
+    display: block;
+    transform: translateY(5px);
+    /* Let it sit naturally on the bottom of the section */
+}
+
+/* Removed legacy sidebar styles */
+/* =========================================
+   REFINED MOBILE OVERRIDES (Site-Wide Consistency)
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    /* --- TYPOGRAPHY & ALIGNMENT --- */
+    .hero-title,
+    .section-title,
+    .feature-title,
+    .cta-title,
+    .footer-title,
+    .footer-top h2 {
+        font-size: 26px !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero-subtitle,
+    .feature-content p,
+    .cta-desc,
+    .footer-section p,
+    .brand-col p {
+        font-size: 14px !important;
+        text-align: left !important;
+        line-height: 1.5 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* --- FOOTER CONSISTENCY --- */
+    .footer-top {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 10px !important;
+        text-align: left !important;
+        margin-bottom: 20px !important;
+    }
+
+    .btn-footer-cta {
+        padding: 8px 16px !important;
+        font-size: 12px !important;
+        min-width: auto !important;
+    }
+
+    .nav-col ul {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .nav-col ul li {
+        margin-bottom: 0 !important;
+    }
+
+    .nav-col ul li a,
+    .contact-list li,
+    .news-col h4,
+    .newsletter-input-group input {
+        font-size: 12px !important;
+    }
+
+    .footer-bottom {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 5px !important;
+        padding-top: 20px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        opacity: 0.6 !important;
+    }
+
+    .footer-bottom p,
+    .footer-legal a {
+        font-size: 9px !important;
+        margin: 0 !important;
+    }
+
+    .footer-legal {
+        display: flex !important;
+        white-space: nowrap !important;
+        gap: 5px !important;
+    }
+
+    /* --- SPECIFIC SECTION FIXES --- */
+    .hero-left,
+    .life-section .container,
+    .positions-header,
+    .journey-section .container,
+    .cta-content {
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+
+    .hero-content,
+    .container {
+        padding: 0 20px !important;
+    }
+
+    .feature-item {
+        flex-direction: row !important;
+        text-align: left !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+
+    .footer-middle {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-title,
+    .section-title,
+    .feature-title,
+    .cta-title,
+    .footer-title,
+    .footer-top h2 {
+        font-size: 24px !important;
+    }
+
+    .hero-subtitle,
+    .feature-content p,
+    .cta-desc,
+    .footer-section p,
+    .brand-col p {
+        font-size: 13px !important;
+    }
+
+    .footer-bottom {
+        gap: 3px !important;
+        padding-top: 15px !important;
+    }
+
+    .footer-bottom p,
+    .footer-legal a {
+        font-size: 8px !important;
+    }
+
+    .footer-legal {
+        gap: 3px !important;
+    }
+
+    .btn-footer-cta {
+        padding: 5px 10px !important;
+        font-size: 10px !important;
+    }
+}
+
+
+/* Life at Dilshaj Infotech Section */
+.life-section {
+    padding: 100px 0;
+    background: #FAFBFC;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.highlight-blue {
+    background: linear-gradient(90deg, #2563EB 0%, #7C3AED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Life at Dilshaj Section */
+.life-section {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.life-section .section-title {
+    font-size: 56px;
+    /* Increased size as requested (was 42px via section-title) */
+}
+
+.life-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.life-features {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.feature-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    font-size: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-title {
+    font-size: 26px;
+    /* Increased from 22px */
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.feature-description {
+    font-size: 19px;
+    /* Increased from 16px */
+    color: #666;
+    line-height: 1.6;
+    /* Increased line height for readability */
+    max-width: 480px;
+    /* Slightly wider to accommodate larger text */
+}
+
+.life-images-container {
+    position: relative;
+    padding: 20px;
+}
+
+.image-stack {
+    position: relative;
+    height: 450px;
+    /* Controlled height for the whole stack */
+    width: 100%;
+}
+
+.stack-item {
+    position: absolute;
+    border-radius: 30px;
+    /* Softer corners as in reference */
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.stack-top {
+    width: 90%;
+    height: 300px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.stack-bottom {
+    width: 48%;
+    height: 380px;
+    z-index: 2;
+    bottom: -30px;
+    right: 0;
+}
+
+.stack-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Open Positions Section */
+.positions-section {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.positions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.positions-header .section-title {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.view-all-btn {
+    background: transparent;
+    border: 2px solid #2563EB;
+    color: #2563EB;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.view-all-btn:hover {
+    background: #2563EB;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.positions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.position-card {
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    transition: all 0.3s ease;
+}
+
+.position-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.position-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.position-content {
+    flex: 1;
+}
+
+.position-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.position-details {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.detail-item i {
+    color: #9CA3AF;
+    font-size: 12px;
+}
+
+.apply-btn {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.apply-btn:hover {
+    background: #2563EB;
+    transform: translateY(-2px);
+}
+
+/* Hiring Journey Section */
+.journey-section {
+    padding: 100px 0;
+    background: #FAFBFC;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 60px auto 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #2563EB 0%, #7C3AED 100%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item.left {
+    justify-content: flex-start;
+}
+
+.timeline-item.right {
+    justify-content: flex-end;
+}
+
+.timeline-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 380px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-item.left .timeline-card {
+    margin-right: calc(50% + 30px);
+}
+
+.timeline-item.right .timeline-card {
+    margin-left: calc(50% + 30px);
+}
+
+.timeline-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: #2563EB;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 4px #F3F4F6;
+    z-index: 2;
+}
+
+.timeline-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.timeline-description {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.7;
+}
+
+/* CTA Section */
+.cta-section {
+    background: url('../images/image3.png') center center / cover no-repeat;
+    padding: 80px 0;
+    position: relative;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 40, 70, 0.75);
+    z-index: 1;
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.cta-btn {
+    background: #2563EB;
+    color: #fff;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cta-btn:hover {
+    background: #1D4ED8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+}
+
+.cta-btn i {
+    font-size: 18px;
+}
+
+/* Removed old footer styles - using shared footer from home/style.css */
+
+
+/* Responsive Design */
+@media (max-width: 1199px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .hero-title {
+        font-size: 52px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .life-grid {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    .nav {
+        gap: 20px;
+        padding: 12px 25px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        padding-top: 40px;
+    }
+
+    .hero-left {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-subtitle {
+        margin: 0 auto 30px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-person {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .life-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        justify-content: flex-start;
+    }
+
+    .timeline-item.left .timeline-card,
+    .timeline-item.right .timeline-card {
+        margin-left: 70px;
+        margin-right: 0;
+    }
+
+    .timeline-dot {
+        left: 30px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    .lets-talk-btn {
+        order: 2;
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .positions-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .position-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .position-details {
+        justify-content: center;
+    }
+
+    .timeline-card {
+        max-width: none;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 639px) {
+
+    .life-section,
+    .positions-section,
+    .journey-section {
+        padding: 60px 0;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .position-card {
+        padding: 20px;
+    }
+
+    .timeline-item.left .timeline-card,
+    .timeline-item.right .timeline-card {
+        margin-left: 60px;
+    }
+}
+
+/* =========================================
+   REFINED MOBILE OVERRIDES (Site-Wide Consistency)
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    /* --- TYPOGRAPHY & ALIGNMENT --- */
+    .hero-title,
+    .section-title,
+    .feature-title,
+    .cta-title,
+    .footer-title,
+    .footer-top h2 {
+        font-size: 26px !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero-subtitle,
+    .feature-content p,
+    .cta-desc,
+    .footer-section p,
+    .brand-col p {
+        font-size: 14px !important;
+        text-align: left !important;
+        line-height: 1.5 !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* --- FOOTER CONSISTENCY --- */
+    .footer-top {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 10px !important;
+        text-align: left !important;
+        margin-bottom: 20px !important;
+    }
+
+    .btn-footer-cta {
+        padding: 8px 16px !important;
+        font-size: 12px !important;
+        min-width: auto !important;
+    }
+
+    .nav-col ul {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .nav-col ul li {
+        margin-bottom: 0 !important;
+    }
+
+    .nav-col ul li a,
+    .contact-list li,
+    .news-col h4,
+    .newsletter-input-group input {
+        font-size: 12px !important;
+    }
+
+    .footer-bottom {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 5px !important;
+        padding-top: 20px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        opacity: 0.6 !important;
+    }
+
+    .footer-bottom p,
+    .footer-legal a {
+        font-size: 9px !important;
+        margin: 0 !important;
+    }
+
+    .footer-legal {
+        display: flex !important;
+        white-space: nowrap !important;
+        gap: 5px !important;
+    }
+
+    /* --- SPECIFIC SECTION FIXES --- */
+    .hero-left,
+    .life-section .container,
+    .positions-header,
+    .journey-section .container,
+    .cta-content {
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+
+    .hero-content,
+    .container {
+        padding: 0 20px !important;
+    }
+
+    .feature-item {
+        flex-direction: row !important;
+        text-align: left !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+
+    .footer-middle {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-title,
+    .section-title,
+    .feature-title,
+    .cta-title,
+    .footer-title,
+    .footer-top h2 {
+        font-size: 24px !important;
+    }
+
+    .hero-subtitle,
+    .feature-content p,
+    .cta-desc,
+    .footer-section p,
+    .brand-col p {
+        font-size: 13px !important;
+    }
+
+    .footer-bottom {
+        gap: 3px !important;
+        padding-top: 15px !important;
+    }
+
+    .footer-bottom p,
+    .footer-legal a {
+        font-size: 8px !important;
+    }
+
+    .footer-legal {
+        gap: 3px !important;
+    }
+
+    .btn-footer-cta {
+        padding: 5px 10px !important;
+        font-size: 10px !important;
+    }
+}
+
+/* Fix White Background Gap above Footer */
+.cta-section {
+    padding-bottom: 120px !important;
+    /* increased to extend behind footer */
+    margin-bottom: -100px !important;
+    /* pull footer up */
+    position: relative;
+    z-index: 1;
+}
+
+.footer-section {
+    position: relative;
+    z-index: 2;
+    background: transparent !important;
+    /* Ensure no bg on container */
+}

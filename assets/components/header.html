@@ -1,0 +1,423 @@
+<!-- Header / Navigation -->
+<header class="header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="../assets/images/company_logo.png" alt="Dilshaj Infotech">
+        </div>
+
+        <nav class="custom-navbar">
+            <ul class="nav-links">
+                <li><a href="../pages/home.html">Home</a></li>
+                <li><a href="../pages/about.html">About Us</a></li>
+                <li><a href="../pages/services.html">Services</a></li>
+                <li><a href="../pages/project.html">Projects</a></li>
+                <li><a href="../pages/career.html">Career</a></li>
+                <li><a href="../pages/contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <a href="../pages/contact.html" class="header-btn">Let's Talk</a>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+<style>
+    .header {
+        background: transparent;
+        /* Transparent header to overlay hero */
+        position: fixed;
+        /* Changed from sticky to fixed */
+        top: 0;
+        z-index: 1000;
+        padding: 15px 0;
+        /* Slightly tighter padding */
+        border-bottom: none;
+        width: 100%;
+        font-family: 'Poppins', sans-serif !important;
+        /* Force font consistency */
+        transition: all 0.3s ease;
+    }
+
+    /* Renamed from .container to avoid Bootstrap conflicts */
+    .header .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding: 0 50px;
+        /* Match global container padding */
+        width: 100%;
+        max-width: 100%;
+        /* Full width for corners */
+        margin: 0 auto;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 80px;
+        /* Ensure consistent height */
+        width: auto;
+    }
+
+    /* Centered Pill Navigation */
+    .custom-navbar {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Removed flex:1 and display logic that was dependent on siblings */
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 50px;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 15px 50px;
+        border-radius: 50px;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        align-items: center;
+        /* backdrop-filter: blur(5px); Removed as it is redundant with solid background */
+        white-space: nowrap;
+        /* Prevent wrapping */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        /* Consistent shadow */
+    }
+
+    .nav-links li a {
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: #1A1A1A;
+        /* Dark gray/black */
+        transition: var(--transition);
+        position: relative;
+        padding: 5px 0;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+        color: #007BFF;
+        /* Hardcoded to match Home Page primary blue, ignoring theme overrides */
+        font-weight: 600;
+        /* Subtle weight increase for active */
+    }
+
+    /* Right Side Button */
+    .header-btn {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 35px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        border-radius: 50px;
+        background: transparent;
+        color: #1A1A1A;
+        /* Black Text */
+        z-index: 1;
+        transition: all 0.3s ease;
+        border: none;
+    }
+
+    /* Gradient Border (Pseudo) */
+    .header-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50px;
+        padding: 2px;
+        /* Border width */
+        background: linear-gradient(90deg, #3b82f6 0%, #a855f7 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+    }
+
+    /* White Background (Pseudo) */
+    .header-btn::after {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        /* Inside border */
+        border-radius: 50px;
+        background: #fff;
+        z-index: -2;
+        transition: background 0.3s ease;
+    }
+
+    .header-btn:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .header-btn:hover::after {
+        background: linear-gradient(90deg, #3b82f6 0%, #a855f7 100%);
+        inset: 0;
+        /* Fill entire button including border area */
+    }
+
+    /* Mobile Toggle */
+    .mobile-toggle {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #1A1A1A;
+    }
+
+    /* Large Desktop Expansion */
+    @media (min-width: 1601px) {
+        .header .header-container {
+            max-width: 1800px;
+            padding: 0 60px;
+        }
+    }
+
+    /* Laptop Scaling (1280px - 1366px) */
+    @media (max-width: 1366px) {
+        .logo img {
+            height: 60px;
+            /* Reduced from 80px */
+        }
+
+        .nav-links {
+            gap: 30px;
+            /* Reduced from 50px */
+            padding: 10px 40px;
+        }
+
+        .nav-links li a {
+            font-size: 0.95rem;
+            /* Reduced from 1.1rem */
+        }
+
+        .header-btn {
+            padding: 10px 25px;
+            font-size: 0.95rem;
+        }
+    }
+
+    /* Tablet Scaling (768px - 1024px) - Keep Desktop Menu but tighter */
+    @media (max-width: 1024px) {
+        .header .header-container {
+            width: 100% !important;
+            /* Full width */
+            margin: 0 !important;
+            padding: 0 20px !important;
+            /* Side padding to keep logo from edge */
+            max-width: 100vw !important;
+            /* Strict viewport constraint */
+            box-sizing: border-box !important;
+        }
+
+        .nav-links {
+            gap: 15px;
+            /* Tight gap for tablet */
+            padding: 10px 25px;
+            /* Reduced padding */
+        }
+
+        .nav-links li a {
+            font-size: 0.85rem;
+            /* Smaller font */
+        }
+
+        .header-btn {
+            padding: 6px 14px;
+            /* Further reduced */
+            font-size: 0.8rem;
+        }
+
+        .logo img {
+            height: 40px;
+            /* Smaller logo for tablet */
+        }
+    }
+
+    /* Mobile Menu Trigger (Below 768px) */
+    @media (max-width: 767px) {
+
+        /* --- HEADER & NAVIGATION --- */
+        .header .header-container {
+            padding: 0 10px;
+            /* Reduced from 20px */
+        }
+
+        .logo {
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
+            /* Blue-Purple Gradient */
+            padding: 1px;
+        }
+
+        /* Reset floating icon size for mobile */
+        .float-icon {
+            width: 80px !important;
+            height: 80px !important;
+        }
+
+        .logo img {
+            height: 28px;
+            /* Slightly larger to fit branding */
+            background: #fff;
+            /* Non-transparent background */
+            border-radius: 6px;
+            padding: 2px 6px;
+            /* Spacing inside white box */
+            display: block;
+            margin: 0 !important;
+            /* Reset margins */
+        }
+
+        .header {
+            padding: 5px 0;
+            /* Reduced from 10px */
+            background: transparent !important;
+            /* Prevent white scroll bar */
+        }
+
+        .mobile-toggle {
+            display: block;
+            z-index: 1002;
+            font-size: 1rem;
+            /* Reduced from 1.8rem */
+            cursor: pointer;
+        }
+
+        /* Overlay Navigation */
+        .custom-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-100%);
+            /* Hidden by default */
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            visibility: hidden;
+            /* Accessibility */
+        }
+
+        /* Active State (Toggled via JS) */
+        .nav-links.active {
+            /* JS adds active to nav-links, but we need to target the parent or handle it */
+            /* For now, assuming script adds 'active' to .nav-links. 
+           But since .custom-navbar wraps it, we need .custom-navbar to be the overlay. 
+           We'll assume the script toggles the PARENT .custom-navbar or we adjust CSS.
+           
+           ADJUSTMENT: We will style .nav-links as the full overlay since JS targets it.
+        */
+            transform: translateY(0);
+            visibility: visible;
+            display: flex;
+            /* Force flex display */
+        }
+
+        /* Override .custom-navbar to not interfere if it's static */
+        .custom-navbar {
+            position: static;
+            transform: none;
+            width: auto;
+            height: auto;
+            background: transparent;
+            visibility: visible;
+        }
+
+        /* The actual list becomes the overlay */
+        .nav-links {
+            position: fixed;
+            top: 0;
+            left: auto !important;
+            /* Override left: 0 */
+            right: 0 !important;
+            /* Anchor to right */
+            width: 50% !important;
+            /* 50% Width as requested */
+            height: auto !important;
+            /* Reduced height to fit content */
+            min-height: 50vh;
+            /* Optional: Ensure it's not too small */
+            background: #ffffff;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 50px 0;
+            /* Add padding for spacing */
+            margin: 0;
+            border: none;
+            border-radius: 0 0 0 20px;
+            /* Rounded bottom-left corner */
+            transform: translateX(100%);
+            /* Slide from Right */
+            transition: transform 0.3s ease-in-out;
+            z-index: 999;
+            box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+            /* Add shadow for depth */
+        }
+
+        .nav-links.active {
+            transform: translateX(0);
+        }
+
+        .nav-links li a {
+            font-size: 16px !important;
+            /* Reduced from 1.5rem */
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* Hide Desktop Button on Mobile or move it */
+        .header-btn {
+            display: none;
+        }
+
+        /* Mobile Navigation */
+        .mobile-toggle {
+            display: block;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: 70%;
+            background: #fff;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            transition: 0.3s ease;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 0;
+            border: none;
+        }
+
+        .nav-links.active {
+            right: 0;
+        }
+
+        .header-btn {
+            display: none;
+            /* Hide 'Let's Talk' on small mobile if needed, or adjust */
+        }
+    }
+</style>

@@ -1,0 +1,354 @@
+/* 
+   DILSHAJ PORTFOLIO - PROJECT PAGE STYLES 
+   Inherits attributes from home.css
+*/
+
+/* --- HERO OVERRIDES --- */
+.hero-image {
+    position: relative;
+    /* Ensure z-index context */
+}
+
+.hero-woman-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Prevent distortion */
+}
+
+/* --- FUTURE PRODUCTS & PROJECTS --- */
+.future-products-section {
+    padding: var(--padding-section-y) var(--padding-section-x);
+    background: #f8f4ff;
+}
+
+.title-blue {
+    color: var(--primary-blue);
+}
+
+.text-blue {
+    color: var(--primary-blue);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+@media (min-width: 1025px) {
+    .project-card {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .project-card.reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.project-image {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    /* Limit size */
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+.image-overlay-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.project-content {
+    flex: 1;
+    width: 100%;
+}
+
+.project-title {
+    font-size: var(--font-h2);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.project-description {
+    color: var(--light-text);
+    margin-bottom: 20px;
+}
+
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.feature-pill {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--light-text);
+    transition: 0.3s;
+}
+
+.feature-pill:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    background: rgba(0, 123, 255, 0.05);
+}
+
+/* --- PROCESS SECTION --- */
+.process-section {
+    padding: var(--padding-section-y) var(--padding-section-x);
+    background: white;
+}
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* Mobile default */
+    gap: 30px;
+    margin-top: 50px;
+    position: relative;
+}
+
+@media (min-width: 769px) {
+    .timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .timeline-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.process-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.process-card:hover {
+    box-shadow: var(--shadow-soft);
+    border-color: var(--primary-blue);
+}
+
+.p-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.p-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.p-desc {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+
+/* --- TRANSFORM SECTION --- */
+.transform-section {
+    padding: 80px 20px;
+    background: var(--bg-dark);
+    text-align: center;
+    color: white;
+}
+
+.transform-content h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: var(--font-h2);
+}
+
+.transform-content p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 auto 40px;
+    max-width: 600px;
+}
+
+.cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    background: var(--primary-blue);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.cta-btn:hover {
+    background: #0069d9;
+}
+
+/* --- RETAINED MOCKUP STYLES (Cleaned for variables) --- */
+.phone-frame {
+    /* Kept relative sizing */
+    width: 60%;
+    max-width: 300px;
+    margin: 0 auto;
+    background: white;
+    border: 8px solid #1e293b;
+    border-radius: 30px;
+    overflow: hidden;
+    aspect-ratio: 9/19;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* ... additional complex mockups can be added here if used in HTML ... */
+
+/* --- MOBILE SPECIFIC FIXES --- */
+@media (max-width: 767px) {
+
+    /* Force 2-column layout for timeline grid */
+    .timeline-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        /* Tighter gap for small screens */
+    }
+
+    /* Reduce Heading Font Size */
+    /* Overrides inline style font-size: 3rem */
+    .process-header h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Adjust Card Padding for 2-col layout */
+    .process-card {
+        padding: 15px !important;
+        grid-column: auto !important;
+        /* Override inline styles to allow wrapping */
+        margin: 0 !important;
+    }
+
+    /* Hide Desktop Timeline Decoration on Mobile */
+    .timeline-line,
+    .connector-line,
+    .connector-dot,
+    .trophy-icon {
+        display: none !important;
+    }
+
+    /* Adjust Number Size */
+    .p-num {
+        font-size: 1.2rem !important;
+    }
+
+    /* Adjust Title Size */
+    .p-title {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Fix Footer Background blending */
+/* Fix Footer Background blending */
+#footer-placeholder {
+    background-color: var(--bg-dark) !important;
+}
+
+/* Ensure the footer's internal wrapper is transparent so the placeholder color shows */
+#footer-placeholder .footer-section {
+    background-color: transparent !important;
+}
+/* --- MODAL STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--primary-blue);
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
